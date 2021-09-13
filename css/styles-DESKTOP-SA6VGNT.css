@@ -20,7 +20,6 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 0px 0px 10px 5px hsla(0, 75%, 89%, 0.61);
 }
 
 .navbar a {
@@ -47,17 +46,21 @@ body {
 }
 
 .shopping {
-    width: 35px;
+    width: 25px;
+}
+
+#shopping {
+    padding: 17px 16px;
 }
 
 .menu {
     display: flex;
     justify-content: flex-end;
-    padding-right: 150px;
+    padding-right: 50px;
 }
 
 .banner {
-    margin-top: 68px;
+    margin-top: 70px;
     max-width: 100%;
     height: 100vh;
     background: url(../images/woman-mediano.png)no-repeat;
@@ -106,15 +109,21 @@ body {
     font-size: 1.1em;
 }
 
-.descipcion-pruductos {
+/* .main {
+    padding: 16px;
+    margin-top: 30px;
+    height: 1500px;
+} */
+.descipcion-pruductos{
     width: 100%;
     height: 100px;
-    background: -webkit-linear-gradient(left, #741d51 0%, #e44e52 100%);
-    background: linear-gradient(to right, #741d51 0%, #e44e52 100%);
+    /* Used in this example to enable scrolling */
+    /* background: linear-gradient(135deg, #ee8b8b, #f8bfbf) no-repeat; */
+    background: -webkit-linear-gradient(left, #741d51 0%,#e44e52 100%);
+    background: linear-gradient(to right, #741d51 0%,#e44e52 100%);
     display: flex;
     justify-content: center;
 }
-
 .publicida {
     width: 80%;
     display: flex;
@@ -125,15 +134,14 @@ body {
     font-weight: 200;
 }
 
-.publicida div {
+.publicida div{
     max-width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
-.publicida img {
+.publicida img{
     margin: 20px;
 }
 
@@ -150,38 +158,31 @@ main {
     width: 80%;
     display: grid;
     gap: 2em;
-    grid-auto-rows: 23em;
+    grid-auto-rows: 21em;
     grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-
 }
 
 .card {
     gap: 10px;
     border-radius: 5PX;
-    background-color: white;
-    border: solid 1px hsl(0, 64%, 91%);
-}
-
-.card:hover {
-    box-shadow: 0px 3px 10px 5px hsl(0, 75%, 89%);
-}
-
-.item {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.descripcion-producto {
-    height: 50%;
-    gap: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: white;
+    border: solid 1px hsl(0, 64%, 91%);
+    padding: 20px;
 }
-.precio{
-    color: hsl(0, 36%, 70%);
+
+.card:hover {
+    box-shadow: 0px 3px 10px 5px hsl(0, 75%, 89%);
+    ;
 }
+
+.card img {
+    width: 150px;
+}
+
 .comprar {
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border: none;
@@ -199,72 +200,12 @@ main {
     box-shadow: 0px 3px 10px 3px hsl(0, 80%, 86%);
 }
 
-.name-producto {
+.descripcion {
     color: hsl(0, 6%, 24%);
     font-size: 1.2em;
     font-weight: 600;
 }
 
-/*Carrito de Compras*/
-
-#shopping{
-    padding: 17px 16px;
-    position: fixed;
-    top: -5px;
-    right: 50px;
-}
-#shopping #carrito{
-    display: none;
-}
-
-#shopping:hover #carrito {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    z-index: 1;
-    background-color: white;
-    padding: 20px;
-    min-height: 400px;
-    min-width: 300px;
-}
-
-.u-full-width {
-    width: 100%;
-    box-sizing: border-box;
-}
-#vaciar-carrito{
-    margin-top: 30px;
-}
-
-
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.borrar-producto {
-    background-color: hsl(0, 36%, 70%);
-    border-radius: 50%;
-    padding: 8px 9px 5px 9px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border: none;
-}
-.borrar-producto:hover{
-    color: hsl(0, 6%, 24%);
-    font-weight: 600;
-}
-th,
-td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid hsl(0, 36%, 70%);
-text-align: center; }
-th:first-child,
-td:first-child {
-  padding-left: 0; }
-th:last-child,
-td:last-child {
-  padding-right: 0; }
 @media(max-width:1024px) {
     /* .banner {
         margin-top: 75px;
