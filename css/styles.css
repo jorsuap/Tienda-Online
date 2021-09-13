@@ -17,8 +17,6 @@ body {
 .navbar {
     overflow: hidden;
     background-color: hsl(0, 0%, 100%);
-    position: fixed;
-    top: 0;
     width: 100%;
     box-shadow: 0px 0px 10px 5px hsla(0, 75%, 89%, 0.61);
 }
@@ -48,6 +46,7 @@ body {
 
 .shopping {
     width: 35px;
+    position: relative;
 }
 
 .menu {
@@ -57,7 +56,6 @@ body {
 }
 
 .banner {
-    margin-top: 68px;
     max-width: 100%;
     height: 100vh;
     background: url(../images/woman-mediano.png)no-repeat;
@@ -179,9 +177,11 @@ main {
     align-items: center;
     flex-direction: column;
 }
-.precio{
+
+.precio {
     color: hsl(0, 36%, 70%);
 }
+
 .comprar {
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border: none;
@@ -207,13 +207,14 @@ main {
 
 /*Carrito de Compras*/
 
-#shopping{
+#shopping {
     padding: 17px 16px;
-    position: fixed;
+    position: absolute;
     top: -5px;
     right: 50px;
 }
-#shopping #carrito{
+
+#shopping #carrito {
     display: none;
 }
 
@@ -225,7 +226,7 @@ main {
     z-index: 1;
     background-color: white;
     padding: 20px;
-    min-height: 400px;
+    min-height: 10ms0px;
     min-width: 300px;
 }
 
@@ -233,10 +234,39 @@ main {
     width: 100%;
     box-sizing: border-box;
 }
-#vaciar-carrito{
+
+#vaciar-carrito {
     margin-top: 30px;
 }
-
+.incador-cantidad{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    padding: 5px 8px 3px 8px;
+    background: -webkit-linear-gradient(left, #741d51 0%, #e44e52 100%);
+    border-radius: 50%;
+    color: hsl(0, 0%, 100%);
+    font-weight: 400;
+    visibility: hidden;
+}
+.incador-cantidad_visible{
+    visibility: visible;
+}
+.hiddecarrito{
+    visibility: hidden;
+    font-weight: 200;
+    color: gray;
+}
+.msnvacio{
+    font-weight: 400;
+    color: gray;
+    padding-top: 30px;
+    text-align: center;
+    display: none;
+}
+.msnvacio-block{
+    display:block;
+}
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -249,22 +279,28 @@ main {
     font-weight: bold;
     border: none;
 }
-.borrar-producto:hover{
+
+.borrar-producto:hover {
     color: hsl(0, 6%, 24%);
     font-weight: 600;
 }
+
 th,
 td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid hsl(0, 36%, 70%);
-text-align: center; }
+    padding: 12px 15px;
+}
+
 th:first-child,
 td:first-child {
-  padding-left: 0; }
+
+    padding-left: 0;
+}
+
 th:last-child,
 td:last-child {
-  padding-right: 0; }
+    padding-right: 0;
+}
+
 @media(max-width:1024px) {
     /* .banner {
         margin-top: 75px;
@@ -293,3 +329,21 @@ td:last-child {
 
 
 } */
+
+.alinear {
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction:column;
+    width: 150px;
+    height: 100px;
+}
+
+.name-producto-carrito {
+    font-weight: 600;
+}
+.total{
+    font-size: 1.2em;
+    text-align: center;
+}
