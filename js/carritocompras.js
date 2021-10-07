@@ -12,18 +12,7 @@ let cantidadTotal = 0;
 let totalPagar = 0;
 let articulosCarrito = [];
 
-function carritoVacio(){
-    if(articulosCarrito.length < 1){
-        vaciarCarrito.classList.add('hiddecarrito');
-        totalmsn.classList.add('hiddecarrito');
-        msnvacio.classList.add('msnvacio-block');
-    }else{
-        vaciarCarrito.classList.remove('hiddecarrito');
-        totalmsn.classList.remove('hiddecarrito');
-        msnvacio.classList.remove('msnvacio-block');
-    }
-}
-carritoVacio();
+
 
 //agregamos un Listenner a cada boton COMPRAR y ejecutamos funcion agregar producto
 listaProductos.forEach(function (comprar) {
@@ -39,7 +28,31 @@ cargarEvenlisteners();
 function cargarEvenlisteners() {
     //elimina cursos del carrito
     carrito.addEventListener('click', eliminarproducto);
+
+    //obtener datos del local storage
+    document.addEventListener('DOMContentLoaded', () => {
+        articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        cantidadTotal = JSON.parse(localStorage.getItem('cantidadtotal'))  || 0;
+        totalPagar = JSON.parse(localStorage.getItem('totalpagar'))  || 0;
+        mostrarenHTML();
+        totalaPagar();
+        actualizardisplay();
+        carritoVacio();
+    })
 }
+
+function carritoVacio(){
+    if(articulosCarrito.length < 1){
+        vaciarCarrito.classList.add('hiddecarrito');
+        totalmsn.classList.add('hiddecarrito');
+        msnvacio.classList.add('msnvacio-block');
+    }else{
+        vaciarCarrito.classList.remove('hiddecarrito');
+        totalmsn.classList.remove('hiddecarrito');
+        msnvacio.classList.remove('msnvacio-block');
+    }
+}
+
 
 //Funcion eliminar curso
 function eliminarproducto(e) {
@@ -62,6 +75,7 @@ function eliminarproducto(e) {
         mostrarenHTML();
         actualizardisplay();
         carritoVacio();
+        sincronizarStorage();
     }
 }
 
@@ -133,12 +147,22 @@ function mostrarenHTML() {
             </td>
             `;
         contenedorCarrito.appendChild(row);
-    })
+    });
+
+    //sincronizar con localStorage
+    sincronizarStorage();
 };
+
+//sincronizar con local storage
+function sincronizarStorage() {
+    localStorage.setItem('carrito', JSON.stringify(articulosCarrito));
+    localStorage.setItem('cantidadtotal', JSON.stringify(cantidadTotal));
+    localStorage.setItem('totalpagar', JSON.stringify(totalPagar))
+}
 
 function limpiarHTML() {
     // contenedorCarrito.innerHTML ='';
-    while (contenedorCarrito.firstChild) { //De esta forma se elimina la redundancia mas rapido
+    while (contenedorCarrito.firstChild) { //De esta forma se elimina los elementos del DOM
         contenedorCarrito.removeChild(contenedorCarrito.firstChild)
     }    
 };
