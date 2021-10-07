@@ -155,11 +155,12 @@ header {
         cursor: pointer;
     }
 }
+
 /* -----------------------Banner------------------------- */
 .banner {
     margin-top: 60px;
     max-width: 100%;
-    min-height: 400px;
+    min-height: 100vh;
     background: url(../images/woman-mediano.png)no-repeat;
     background-size: contain;
     background-position: top right;
@@ -204,6 +205,16 @@ header {
     font-size: 1.1em;
 }
 
+@media screen and (max-width: 1020px) {
+    .banner {
+        min-height: 500px;
+    }
+
+    .cardsoon__tittle {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     .cardsoon_seccion-text {
@@ -212,9 +223,11 @@ header {
         justify-content: flex-start;
         margin: 20px;
     }
+
     .cardsoon_seccion-text {
         width: 100%;
     }
+
     .cardsoon__text {
         top: 120px;
         left: 210px;
@@ -225,8 +238,10 @@ header {
         line-height: 30px;
         letter-spacing: 5px;
     }
+
     .banner {
-        min-height: 300px;}
+        min-height: 300px;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -236,8 +251,10 @@ header {
         line-height: 25px;
         letter-spacing: 5px;
     }
+
     .banner {
-        min-height: 250px;}
+        min-height: 250px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -254,11 +271,12 @@ header {
 }
 
 @media screen and (max-width: 823px) and (max-height:414px) {
-    .cardsoon__text{
+    .cardsoon__text {
         top: 50%;
         left: 55%;
     }
 }
+
 /* ----------------------------------------- */
 
 .descipcion-pruductos {
@@ -421,6 +439,7 @@ main {
 #vaciar-carrito {
     margin-top: 30px;
 }
+
 /* .incador-cantidad{
     position: absolute;
     top: 20px;
@@ -432,23 +451,26 @@ main {
     font-weight: 400;
     visibility: hidden;
 } */
-.incador-cantidad_visible{
+.incador-cantidad_visible {
     visibility: visible;
 }
-.hiddecarrito{
+
+.hiddecarrito {
     visibility: hidden;
     font-weight: 200;
     color: gray;
 }
-.msnvacio{
+
+.msnvacio {
     font-weight: 400;
     color: gray;
     padding-top: 30px;
     text-align: center;
     display: none;
 }
-.msnvacio-block{
-    display:block;
+
+.msnvacio-block {
+    display: block;
 }
 
 /* Tables
@@ -518,7 +540,7 @@ td:last-child {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    flex-direction:column;
+    flex-direction: column;
     width: 150px;
     height: 100px;
 }
@@ -526,7 +548,8 @@ td:last-child {
 .name-producto-carrito {
     font-weight: 600;
 }
-.total{
+
+.total {
     font-size: 1.2em;
     text-align: center;
 }
