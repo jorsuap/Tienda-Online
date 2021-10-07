@@ -7,46 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/logo-circulo.svg">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/iconmenu.css">
     <title>Base Care</title>
 </head>
 
 <body>
-    <section>
-        <nav class="navbar">
-            <a href="#" id="navbar__logo"><img src="images/logo.svg" alt="logo"></a>
-            <div class="menu">
-                <a href="#home" class="active">Home</a>
-                <a href="#news">News</a>
-                <a href="#tutoriales">Tutoriales</a>
-                <a href="#contact">Contact</a>
+    <header>
+        <div class="menu" id="menu">
+            <a href="" class="logo"><img src="images/logo.svg" alt="logo"></a>
+            <a href="#home" class="rosa">Home</a>
+            <a href="#news" class="rosa">News</a>
+            <a href="#contact" class="rosa">Contact</a>
+            <a href="#about" class="rosa">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="menuResposive()"><span class="icon-menu"></span></a>
+            </a>
+        </div>
+        <div id="shopping">
+            <img src="images/shopping.png" alt="shopping" class="shopping">
+            <span class="incador-cantidad">0</span>
+            <div id="carrito">
+                <table id="lista-carrito" class="u-full-width">
+
+                    <tbody></tbody>
+
+                </table>
+                <p class="msnvacio">Tú bolsa esta Vacia.</p>
+                <h1 class="total">Total a pagar: $<span class="totalPagar"></span></h1>
+                <button id="vaciar-carrito" class="comprar button u-full-width">Vaciar Carrito</button>
             </div>
-            <div href="#" id="shopping">
-                <img src="images/shopping.png" alt="shopping" class="shopping">
-                <span class="incador-cantidad">0</span>
-                <div id="carrito">
-                    <table id="lista-carrito" class="u-full-width">
-        
-                        <tbody></tbody>
-        
-                    </table>
-                    <p class="msnvacio">Tú bolsa esta Vacia.</p>
-                    <h1 class="total">Total a pagar: $<span class="totalPagar"></span></h1>
-                    <button id="vaciar-carrito" class="comprar button u-full-width">Vaciar Carrito</button>
-                </div>
-            </div>
-        </nav>
-    </section>
+        </div>
+    </header>
 
     <section class="banner">
         <div class="cardsoon_seccion-text">
             <div class="cardsoon__text">
                 <h1 class="cardsoon__tittle">
-                    <span class="cardsoon__tittle-colored"> base <br></span> disfruta <br> cuida
+                    <span class="cardsoon__tittle-colored">base<br></span>disfruta<br>cuida
                 </h1>
-                <p class="extracto">
+                <!-- <p class="extracto">
                     Disfruta los resultados de una piel saludable, tersa y suave, nuestros productos
                     te acompañaran todos los dias para que seas la mejor versión de ti.
-                </p>
+                </p> -->
             </div>
         </div>
     </section>
@@ -180,6 +181,7 @@
         </section>
     </main>
     <script src="js/carritocompras.js"></script>
+    <script src="js/menuresponsive.js"></script>
 </body>
 
 </html>

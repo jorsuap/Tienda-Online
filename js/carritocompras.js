@@ -51,6 +51,7 @@ function carritoVacio(){
         totalmsn.classList.remove('hiddecarrito');
         msnvacio.classList.remove('msnvacio-block');
     }
+    sincronizarStorage();
 }
 
 
