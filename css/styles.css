@@ -357,6 +357,7 @@ main {
     background-color: white;
     border: solid 1px hsl(0, 64%, 91%);
     width: 100%;
+    border-radius: 10px ;
 }
 
 .card:hover {
@@ -368,6 +369,7 @@ main {
     height: 50%;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 10px 10px 0 0;
 }
 
 .descripcion-producto {
